@@ -10,4 +10,9 @@ class Shop extends Model
     use HasFactory;
 
     protected $fillable = ['user_id', 'name', 'gold'];
+
+    public function dungeons()
+    {
+        return $this->belongsToMany(Dungeon::class, 'shop_dungeons');
+    }
 }
