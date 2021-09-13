@@ -9,8 +9,8 @@
             </h1>
         </div>
         <div class="mt-8 grid grid-cols-3 gap-x-6">
-            <div class="col-span-3">Current Gold {{ $shop->gold }}</div>
             <div class="col-span-2">
+                <div class="bg-gray-700 text-white p-4">Current Gold <span class="text-yellow-400 font-semibold">{{ $shop->gold }}</span></div>
                 <img src="{{ @asset('img/fantasy_shop.png') }}" alt="Your shop">
                 <x-card title="Your Adventurers" class="mt-6">
                     <div class="w-full">
@@ -32,9 +32,10 @@
                                 <div>Level 1 {{ $adventurer->class }}</div>
                                 <img class="max-h-32" src="{{ asset('img/'.$adventurer->sprite) }}" alt="">
                                 <div>{{ $adventurer->cost }} Gold</div>
-                                <button class="inline-block bg-green-500 text-white px-5 py-3 rounded-lg shadow-sm uppercase tracking-wider font-semibold mx-4">
-                                    Hire
-                                </button>
+{{--                                <button class="inline-block bg-green-500 text-white px-5 py-3 rounded-lg shadow-sm uppercase tracking-wider font-semibold mx-4">--}}
+{{--                                    Hire--}}
+{{--                                </button>--}}
+                                <x-modal openButtonText="Hire" title="Hire Adventurer" content="Are you sure you would like to hire this adventurer?"></x-modal>
                             </div>
                         @endforeach
                     </div>

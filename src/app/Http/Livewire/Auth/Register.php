@@ -46,6 +46,7 @@ class Register extends Component
         $shop = Shop::create([
             'user_id' => $user->id,
             'name' => $this->shopName,
+            'gold' => 20,
         ]);
 
         Adventurer::create([
